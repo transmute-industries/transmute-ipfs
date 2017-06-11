@@ -13,7 +13,7 @@ before_script:
   - export PATH="$HOME/bin/go-ipfs:$PATH"
 install:
   - npm install
-script:
   - ipfs init
   - ipfs daemon &
+script:
   - npm run test
