@@ -14,7 +14,9 @@ A minimal wrapper around ipfs js api.
 $ npm run ipfs
 $ npm run test
 $ npm run demo:web
-$ npm run kill (kill http-server used by demo:web)
+
+# kill http-server used by demo:web
+$ npm run kill 
 ```
 
 # Examples
