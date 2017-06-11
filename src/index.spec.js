@@ -32,7 +32,7 @@ describe('TransmuteIpfs', () => {
                 }
             })
         })
-        it('should add file at filePath to IPFS and return the result', () => {
+        it('should add folder to ipfs and return the result', () => {
             return TI.addFromFs('./dist')
                 .then((res) => {
                     assert.equal(res[0].path, 'dist/data.json')

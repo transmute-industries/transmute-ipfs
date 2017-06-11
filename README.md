@@ -8,9 +8,24 @@ A minimal wrapper around ipfs js api.
 
 - Travis CI Tests
 
+### Testing Locally
+
+```
+$ npm run ipfs
+$ npm run test
+$ npm run demo:web
+$ npm run kill (kill http-server used by demo:web)
+```
+
 # Examples
 
 - https://gateway.ipfs.io/ipfs/Qmac3X7kZJDaV3tnJAT2rQ4aXjZkjnFjVkj4R47rGsAqjB
 - https://ipfs.infura.io/ipfs/QmRrehjkb86JvJcNJwdRBmnBL7a6Etkaooc98hvrXSCpn7/
 - https://ipfs.infura.io/ipfs/QmRa8NrWWxRa1TTenL8V3en9hbpQdPpjaURkz68wL7NfKU
 - https://ipfs.infura.io/api/v0/cat?arg=QmRa8NrWWxRa1TTenL8V3en9hbpQdPpjaURkz68wL7NfKU
+
+
+## References
+
+- https://github.com/ipfs/js-ipfs-api#utility-functions
+- https://github.com/ipfs/js-ipfs-api/pull/315/commits/0a5fbbfa1b1bb7abbd04dbf4cab36033d6a9d359

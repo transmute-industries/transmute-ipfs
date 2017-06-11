@@ -1,1 +1,34 @@
-hello world!
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Transmute IPFS</title>
+    <meta name="description" content="Transmute IPFS">
+    <meta name="author" content="OR13">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    If you see a cat gif, it worked.
+    <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js" integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
+        crossorigin="anonymous"></script>
+    <script>
+        var ipfs = window.IpfsApi('localhost', '5001')
+        const multihashStr = 'QmQ2r6iMNpky5f1m4cnm3Yqw8VSvjuKpTcK1X7dBR1LkJF'
+        ipfs.files.get(multihashStr, function (err, stream) {
+            stream.on('data', (file) => {
+                // write the file's path and contents to standard out
+                console.log(file)
+                if (file.content) {
+                    var iframe = document.createElement('iframe');
+                    // var html = '<body>Foo</body>';
+                    // iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+                    iframe.src = 'http://127.0.0.1:8080/ipfs/' + file.path
+                    document.body.appendChild(iframe);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -54,6 +54,13 @@ class TransmuteIpfs {
             })
         })
     }
+    // TODO::
+    // ipfs.util.addFromURL('http://example.com/', (err, result) => {
+    // if (err) {
+    // throw err
+    // }
+    // console.log(result)
+    // })
 
 }
 
