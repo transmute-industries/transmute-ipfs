@@ -11,9 +11,14 @@ before_script:
   - mkdir $HOME/bin
   - pushd . && cd $HOME/bin && tar -xzvf /tmp/ipfs.tar.gz && popd
   - export PATH="$HOME/bin/go-ipfs:$PATH"
+
 install:
   - npm install
+
+before_script:
   - ipfs init
   - ipfs daemon &
+  - sleep 10
+
 script:
   - npm run test
