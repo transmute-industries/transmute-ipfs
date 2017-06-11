@@ -21,19 +21,15 @@
         const multihashStr = 'QmQ2r6iMNpky5f1m4cnm3Yqw8VSvjuKpTcK1X7dBR1LkJF'
         ipfs.files.get(multihashStr, (err, stream) => {
             stream.on('data', (file) => {
-                // write the file's path and contents to standard out
-                // console.log(file)
                 if (file.content) {
                     var img = document.createElement('img');
-                    // var html = '<body>Foo</body>';
-                    // iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
                     img.src = 'http://127.0.0.1:8080/ipfs/' + file.path
                     document.body.appendChild(img);
                 }
             })
         })
 
-        // why would i use this???
+        // I suppose you would use this when retrieving a directory structure...
         // const jsonFileHash = 'QmRa8NrWWxRa1TTenL8V3en9hbpQdPpjaURkz68wL7NfKU'
         // ipfs.files.get(jsonFileHash, (err, stream) => {
         //     stream.on('data', (file) => {
