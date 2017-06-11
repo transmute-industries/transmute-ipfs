@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Transmute IPFS</title>
@@ -9,26 +10,60 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
+
 <body>
     If you see a cat gif, it worked.
+    <br/>
     <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js" integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
         crossorigin="anonymous"></script>
     <script>
         var ipfs = window.IpfsApi('localhost', '5001')
         const multihashStr = 'QmQ2r6iMNpky5f1m4cnm3Yqw8VSvjuKpTcK1X7dBR1LkJF'
-        ipfs.files.get(multihashStr, function (err, stream) {
+        ipfs.files.get(multihashStr, (err, stream) => {
             stream.on('data', (file) => {
                 // write the file's path and contents to standard out
-                console.log(file)
+                // console.log(file)
                 if (file.content) {
-                    var iframe = document.createElement('iframe');
+                    var img = document.createElement('img');
                     // var html = '<body>Foo</body>';
                     // iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
-                    iframe.src = 'http://127.0.0.1:8080/ipfs/' + file.path
-                    document.body.appendChild(iframe);
+                    img.src = 'http://127.0.0.1:8080/ipfs/' + file.path
+                    document.body.appendChild(img);
                 }
+            })
+        })
+
+        // why would i use this???
+        // const jsonFileHash = 'QmRa8NrWWxRa1TTenL8V3en9hbpQdPpjaURkz68wL7NfKU'
+        // ipfs.files.get(jsonFileHash, (err, stream) => {
+        //     stream.on('data', (file) => {
+        //         if (file.content) {
+        //             let data = ''
+        //             file.content.on('data', (d) => {
+        //                 data = data + d
+        //             })
+        //             file.content.on('end', () => {
+        //                 let obj = JSON.parse(data)
+        //                 console.log('loaded json data from ipfs hash: ', obj)
+        //             })
+        //         }
+        //     })
+        // })
+
+        // get json object from hash
+        const jsonFileHash = 'QmRa8NrWWxRa1TTenL8V3en9hbpQdPpjaURkz68wL7NfKU'
+        ipfs.cat(jsonFileHash, (err, stream) => {
+            if (err) throw err
+            let data = ''
+            stream.on('data', (d) => {
+                data = data + d
+            })
+            stream.on('end', () => {
+                let obj = JSON.parse(data)
+                console.log('loaded json data from ipfs hash: ', obj)
             })
         })
     </script>
 </body>
+
 </html>

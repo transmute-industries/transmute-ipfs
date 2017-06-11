@@ -4,9 +4,12 @@
 
 A minimal wrapper around ipfs js api.
 
+- requires [IPFS](https://ipfs.io/docs/install/)
+
 ### Features
 
 - Travis CI Tests
+- NodeJS and Web Examples
 
 ### Testing Locally
 

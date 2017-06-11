@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "ipfs": "ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"http://127.0.0.1:1337\"]' && ipfs daemon",
+    "ipfs:allow": "ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '[\"http://127.0.0.1:1337\"]'",
+    "ipfs": "npm run ipfs:allow && ipfs daemon",
     "test": "find ./src -name '*.spec.js' | xargs mocha -R spec ",
     "demo:web": "pm2 start http-server -- ./dist -p 1337 && /usr/bin/open -a '/Applications/Google Chrome.app' http://127.0.0.1:1337",
     "kill": "pm2 kill"
