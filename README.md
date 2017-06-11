@@ -1,5 +1,7 @@
 # Transmute IPFS
 
+[![Build Status](https://travis-ci.org/transmute-industries/transmute-ipfs.svg?branch=master)](https://travis-ci.org/transmute-industries/transmute-ipfs)
+
 A minimal wrapper around ipfs js api.
 
 ### Features
