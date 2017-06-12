@@ -22,7 +22,7 @@ $ npm run demo:web
 $ npm run kill 
 ```
 
-# Examples
+### Examples
 
 - https://gateway.ipfs.io/ipfs/Qmac3X7kZJDaV3tnJAT2rQ4aXjZkjnFjVkj4R47rGsAqjB
 - https://ipfs.infura.io/ipfs/QmRrehjkb86JvJcNJwdRBmnBL7a6Etkaooc98hvrXSCpn7/
@@ -30,7 +30,7 @@ $ npm run kill
 - https://ipfs.infura.io/api/v0/cat?arg=QmRa8NrWWxRa1TTenL8V3en9hbpQdPpjaURkz68wL7NfKU
 
 
-## References
+### References
 
 - https://github.com/ipfs/js-ipfs-api#utility-functions
 - https://github.com/ipfs/js-ipfs-api/pull/315/commits/0a5fbbfa1b1bb7abbd04dbf4cab36033d6a9d359

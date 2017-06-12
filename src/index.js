@@ -56,7 +56,6 @@ class TransmuteIpfs {
     }
 
     readObject(path) {
-    
         return new Promise((resolve, reject) => {
             this.ipfs.cat(path, (err, stream) => {
                 if (err) {
